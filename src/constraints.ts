@@ -3,7 +3,7 @@ const validate = require("validate.js");
 const defaultsChannelsconstraints = {
   channelName: {
       format: {
-        pattern: /^(general|random)/,
+        pattern: /^(general|a-rd-news|admins_slack|random|support-it)/,
         message: "'%{value}' is not a default channel",
       },
     }
@@ -29,12 +29,53 @@ const projectsChannelsconstraints = {
     }
 };
 
+const orgaRDChannelsconstraints = {
+  channelName: {
+      presence: true,
+      format: {
+        pattern: /^(RD|rd)(_|-).*$|^(dirc|DIRC)(_|-).*$|^rdhub(_|-).*$|^tf(_|-).*$/,
+        message: "'%{value}' is not an org channel"
+      }
+    }
+};
+
+const polesChannelsconstraints = {
+  channelName: {
+      presence: true,
+      format: {
+        pattern: /^design(_|-).*$|^tech(_|-).*$/,
+        message: "'%{value}' is not a pole channel"
+      }
+    }
+};
+
+
 const helloChannelsconstraints = {
   channelName: {
       presence: true,
       format: {
         pattern: /^hello(_|-).*$/,
         message: "'%{value}' is not a hello channel"
+      }
+    }
+};
+
+const sitesChannelsconstraints = {
+  channelName: {
+      presence: true,
+      format: {
+        pattern: /^cristallin(_|-).*$/,
+        message: "'%{value}' is not a site channel"
+      }
+    }
+};
+
+const RandomChannelsconstraints = {
+  channelName: {
+      presence: true,
+      format: {
+        pattern: /^rnd(_|-).*$/,
+        message: "'%{value}' is not a random channel"
       }
     }
 };
@@ -62,7 +103,11 @@ const constraints =
   [defaultsChannelsconstraints, 
    helpChannelsconstraints,
    projectsChannelsconstraints,
+   orgaRDChannelsconstraints,
+   polesChannelsconstraints,
    helloChannelsconstraints,
+   sitesChannelsconstraints,
+   RandomChannelsconstraints,
    CommunityChannelsconstraints,
    TeamChannelsconstraints]
   ;

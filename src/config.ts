@@ -22,15 +22,15 @@ const chatConfig: ChatConfig = {
 };
 
 const dockUrl: DocUrl = {
-    namingConventionUrl: "https://<aPlaceToConsultNamingConvention>",
+    namingConventionUrl: "https://confluence.dt.renault.com/display/RDHomeCLD/Naming+Convention",
 }
 
 const supChannel: ChannelId= {
-    channelId: "<supervision channel id>"
+    channelId: "D5PDBR4E6"
 }
 
 const adminChannel: ChannelId= {
-    channelId: "<admin channel Id>"
+    channelId: "CJEJ63SKY"
 }
 const config = {
     chat: chatConfig.slack,
