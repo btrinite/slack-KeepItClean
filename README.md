@@ -11,15 +11,15 @@ Moreover, a report is sento to a specific channel (or DM) giving some statistics
 # config
 
 ## global parameters
-App expects to find global parameters in `<src/config.ts>` :
-`<namingConventionUrl>` : this is URL where to consult your Slack Channel naming convention,
-`<supChannel.channelId>` : Slack Channel id to used for sending report,
-`<adminChannel.channelId>` : Slack Channel id where to redirect users if they need to get help
-`<samplesMax>` : Maximum of channels to notify at once (to avoid to massively notify)
+App expects to find global parameters in `src/config.ts` :
+`namingConventionUrl` : this is URL where to consult your Slack Channel naming convention,
+`supChannel.channelId` : Slack Channel id to used for sending report,
+`adminChannel.channelId` : Slack Channel id where to redirect users if they need to get help
+`samplesMax` : Maximum of channels to notify at once (to avoid to massively notify)
 
 ## secrets
 App expects to found 1 env variable (in .env file or in environement) :
-`<SLACK_AUTH_TOKEN>` : Slack App Token
+`SLACK_AUTH_TOKEN` : Slack App Token
 
 # Dev
 This app is written in TypeScript.
@@ -38,7 +38,7 @@ npm run-script start-dev
 Create a Lambda function through AWS CLI/Web Interface.
 Add a Cloudwatch event as lambda input event.
 
-In (package.json), set the `<lambda_name>` accordingly
+In (package.json), set the `lambda_name` accordingly
 
 To package the app:
 ```sh
