@@ -1,0 +1,38 @@
+{
+    "name": "slackPrettifyer",
+    "description": "Slack BOT to keep Slack clean",
+    "lambda_name": "SlackPrettifyer",
+    "version": "0.1.0",
+    "license": "MIT",
+    "main": "src/server.ts",
+    "author": "Benoit Trinité <benoit.trinite@gmail.com>",
+    "repository": {
+        "type" : "git",
+        "url" : "https://github.com/btrinite/slack-KeepItClean.git"
+    },
+    "keywords": [
+        "node",
+        "typescript",
+        "lambda"
+    ],
+    "engines": {
+        "node": ">= 8.0.0"
+    },
+    "scripts": {
+        "build": "tsc",
+        "start-dev": "NODE_ENV=dev node -r dotenv/config -e 'require(\"./dist/server\").handler()' dotenv_config_path=./.env",
+        "pack": "rm slackPrettifyer.zip; cd dist; zip -r ../slackPrettifyer.zip . ../node_modules ../package.json ../tsconfig.json",
+        "deploy": "aws lambda update-function-code --function-name $npm_package_lambda_name --zip-file fileb://slackPrettifyer.zip"
+    },
+    "dependencies": {
+        "@slack/web-api": "^5.0.1",
+        "@types/shuffle-array": "0.0.28",
+        "dotenv": "^7.0.0",
+        "export-to-csv": "^0.2.1",
+        "shuffle-array": "^1.0.1",
+        "validate.js": "^0.12.0"
+    },
+    "devDependencies": {
+        "@types/node": "^11.13.8"
+    }
+}
