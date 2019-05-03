@@ -3,7 +3,7 @@ const validate = require("validate.js");
 const defaultsChannelsconstraints = {
   channelName: {
       format: {
-        pattern: /^(general|a-rd-news|admins_slack|random|support-it)/,
+        pattern: /^(general|a-rd-news|admins_slack|random|support-it|bbc-news)/,
         message: "'%{value}' is not a default channel",
       },
     }
