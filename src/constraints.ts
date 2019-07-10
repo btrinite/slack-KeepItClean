@@ -90,6 +90,26 @@ const CommunityChannelsconstraints = {
     }
 };
 
+const EventChannelsconstraints = {
+  channelName: {
+      presence: true,
+      format: {
+        pattern: /^evt(_|-).*$/,
+        message: "'%{value}' is not an event channel"
+      }
+    }
+};
+
+const GuildChannelsconstraints = {
+  channelName: {
+      presence: true,
+      format: {
+        pattern: /^guild(_|-).*$/,
+        message: "'%{value}' is not a guild channel"
+      }
+    }
+};
+
 const TeamChannelsconstraints = {
   channelName: {
       presence: true,
@@ -109,6 +129,8 @@ const constraints =
    sitesChannelsconstraints,
    RandomChannelsconstraints,
    CommunityChannelsconstraints,
+   EventChannelsconstraints,
+   GuildChannelsconstraints,
    TeamChannelsconstraints]
   ;
 

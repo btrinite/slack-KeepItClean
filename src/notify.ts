@@ -59,7 +59,7 @@ class NotifyAPI {
         shuffledChannels = shuffle(channels);
         for (var i = 0, len = Math.min(shuffledChannels.length,config.samplesMax); i < len; i++) {
             await this.notifyChannel(shuffledChannels[i])
-            ChannelsSumUp.push({title: `<#${shuffledChannels[i].id}>`, value:`To fix`, short:true});
+            ChannelsSumUp.push({title: `${shuffledChannels[i].name}`, value:`To fix`, short:true});
         };
         await this.notifySup(ChannelsSumUp, shuffledChannels.length);
     }
