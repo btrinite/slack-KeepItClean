@@ -64,7 +64,7 @@ const sitesChannelsconstraints = {
   channelName: {
       presence: true,
       format: {
-        pattern: /^cristallin(_|-).*$/,
+        pattern: /^cristallin.*$/,
         message: "'%{value}' is not a site channel"
       }
     }
