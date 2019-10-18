@@ -3,7 +3,7 @@ const validate = require("validate.js");
 const defaultsChannelsconstraints = {
   channelName: {
       format: {
-        pattern: /^(general|a-rd-news|admins_slack|random|support-it|bbc-news)/,
+        pattern: /^(general|a-rd-news|admins_slack|random|support_it|bbc-news)/,
         message: "'%{value}' is not a default channel",
       },
     }
@@ -23,7 +23,7 @@ const projectsChannelsconstraints = {
   channelName: {
       presence: true,
       format: {
-        pattern: /^p(_|-).*$/,
+        pattern: /^p(_|-).*$|^tf(_|-).*$/,
         message: "'%{value}' is not a project channel"
       }
     }
@@ -33,7 +33,7 @@ const orgaRDChannelsconstraints = {
   channelName: {
       presence: true,
       format: {
-        pattern: /^(RD|rd)(_|-).*$|^(dirc|DIRC)(_|-).*$|^rdhub(_|-).*$|^tf(_|-).*$/,
+        pattern: /^(RD|rd)(_|-).*$|^(dirc|DIRC)(_|-).*$|^rdhub(_|-).*$|^edh(_|-).*$/,
         message: "'%{value}' is not an org channel"
       }
     }
